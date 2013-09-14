@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 require 'pp'
 require 'tree'
+require_relative 'extractor'
+
+
 include Tree
 
-require_relative 'extractor'
 def parse_room(content, leaf)
   leaf.content[:data] ||= {}
   leaf.content[:data][:title] = content.split('~')[0]
